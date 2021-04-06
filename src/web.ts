@@ -13,8 +13,9 @@ export class DashPayModuleWeb extends WebPlugin implements DashPayModulePlugin {
     console.log('ECHO', options);
     return options;
   }
-  async print(filter: string): Promise<{ results: any[] }> {
-    console.log('filter: ', filter);
+  async print(printString: string,EXTRA_ORIGINATING_URI:string): Promise<{ results: any[] }> {
+    console.log('print string: ', printString);
+    console.log('EXTRA_ORIGINATING_URI: ', EXTRA_ORIGINATING_URI);
     return {
       results: [{
         firstName: 'Dummy',
