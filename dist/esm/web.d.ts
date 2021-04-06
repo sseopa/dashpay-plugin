@@ -7,7 +7,7 @@ export declare class DashPayModuleWeb extends WebPlugin implements DashPayModule
     }): Promise<{
         value: string;
     }>;
-    print(filter: string): Promise<{
+    print(printString: string, EXTRA_ORIGINATING_URI: string): Promise<{
         results: any[];
     }>;
 }

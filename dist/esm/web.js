@@ -21,9 +21,10 @@ export class DashPayModuleWeb extends WebPlugin {
             return options;
         });
     }
-    print(filter) {
+    print(printString, EXTRA_ORIGINATING_URI) {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log('filter: ', filter);
+            console.log('print string: ', printString);
+            console.log('EXTRA_ORIGINATING_URI: ', EXTRA_ORIGINATING_URI);
             return {
                 results: [{
                         firstName: 'Dummy',
