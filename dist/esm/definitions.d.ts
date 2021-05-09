@@ -9,7 +9,12 @@ export interface DashPayModulePlugin {
     }): Promise<{
         value: string;
     }>;
-    print(printString: string, EXTRA_ORIGINATING_URI: string): Promise<{
+    getSerial(options: {
+        value: string;
+    }): Promise<{
+        value: string;
+    }>;
+    print(printString: string, EXTRA_ORIGINATING_URI: string, dashpaypackagename: string): Promise<{
         results: any[];
     }>;
 }

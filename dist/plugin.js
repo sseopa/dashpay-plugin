@@ -23,10 +23,17 @@ var capacitorPlugin = (function (exports, core) {
                 return options;
             });
         }
-        print(printString, EXTRA_ORIGINATING_URI) {
+        getSerial(options) {
+            return __awaiter(this, void 0, void 0, function* () {
+                console.log('getSerial', options);
+                return options;
+            });
+        }
+        print(printString, EXTRA_ORIGINATING_URI, dashpaypackagename) {
             return __awaiter(this, void 0, void 0, function* () {
                 console.log('print string: ', printString);
                 console.log('EXTRA_ORIGINATING_URI: ', EXTRA_ORIGINATING_URI);
+                console.log('dashpaypackagename: ', dashpaypackagename);
                 return {
                     results: [{
                             firstName: 'Dummy',
