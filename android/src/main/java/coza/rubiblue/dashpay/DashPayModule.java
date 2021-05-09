@@ -28,12 +28,10 @@ import java.util.Map;
 )
 public class DashPayModule extends Plugin {
     private static Context ionicContext;
-    /*public DashPayModule(Context ctx)
+    public DashPayModule(Context ctx)
     {
-        super(); // Remove this
         this.ionicContext = ctx;
-
-    }*/
+    }
 protected static final int PRINT_REQUEST_CODE = 2; // Unique request code
     @PluginMethod
     public void echo(PluginCall call) {
