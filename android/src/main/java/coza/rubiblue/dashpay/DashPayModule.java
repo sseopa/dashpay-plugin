@@ -39,9 +39,16 @@ protected static final int PRINT_REQUEST_CODE = 2; // Unique request code
     }
     @PluginMethod
     public void getSerial(PluginCall call) {
+        try{
         JSObject ret = new JSObject();
         ret.put("value", android.os.Build.SERIAL);
         call.success(ret);
+        }
+        catch(Exception ex){
+            JSObject ret = new JSObject();
+        ret.put("value", "failed to get serial "+ ex.getMessage());
+        call.success(ret);
+        }
     }
  
     @PluginMethod()
