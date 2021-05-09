@@ -27,11 +27,7 @@ import java.util.Map;
         requestCodes={DashPayModule.PRINT_REQUEST_CODE}
 )
 public class DashPayModule extends Plugin {
-    private static Context ionicContext;
-    public DashPayModule(Context ctx)
-    {
-        this.ionicContext = ctx;
-    }
+   
 protected static final int PRINT_REQUEST_CODE = 2; // Unique request code
     @PluginMethod
     public void echo(PluginCall call) {
@@ -41,42 +37,29 @@ protected static final int PRINT_REQUEST_CODE = 2; // Unique request code
         ret.put("value", value);
         call.success(ret);
     }
-    
+    @PluginMethod
+    public void getSerial(PluginCall call) {
+        JSObject ret = new JSObject();
+        ret.put("value", android.os.Build.SERIAL);
+        call.success(ret);
+    }
  
     @PluginMethod()
     public void print(PluginCall call) {
 try{
         String printString = call.getString("printString");
         String EXTRA_ORIGINATING_URI = call.getString("EXTRA_ORIGINATING_URI");
-        // Filter based on the value if want
+        String dashpayPackageName = call.getString("dashpaypackagename");
         Intent share = new Intent(Intent.ACTION_SEND);
-    boolean found = false;
     share.setType("text/plain");
-    List<ResolveInfo> resInfo = ionicContext.getPackageManager().queryIntentActivities(share, 0);
-    for (ResolveInfo info : resInfo) {
-      if (info.activityInfo.packageName.toLowerCase().contains("com.dashpay.bridge") ||
-              info.activityInfo.name.toLowerCase().contains("com.dashpay.bridge") ) {
-        share.putExtra(Intent.EXTRA_ORIGINATING_URI, EXTRA_ORIGINATING_URI);
+    share.putExtra(Intent.EXTRA_ORIGINATING_URI, EXTRA_ORIGINATING_URI);
         share.putExtra("key", "Print");
         share.putExtra("printString", printString);
-        share.setPackage(info.activityInfo.packageName);
-        found = true;
-
-      }
-    }
-    if (found == false){
-      //promise.resolve("com.dashpay.bridge");
-        JSObject ret = new JSObject();
-        ret.put("value", "printing failed, bridge app not detected");
-        call.success(ret);
-    }
-    else {
-        //mReturnResults = promise;
-        startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
+        share.setPackage(dashpayPackageName);
+       startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
         JSObject ret = new JSObject();
         ret.put("value", "sent to printer");
         call.success(ret);
-    }
 }
 catch(Exception ex){
     JSObject ret = new JSObject();

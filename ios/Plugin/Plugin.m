@@ -6,4 +6,5 @@
 CAP_PLUGIN(DashPayModule, "DashPayModule",
            CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(print, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getSerial, CAPPluginReturnPromise);
 )
