@@ -28,12 +28,12 @@ import java.util.Map;
 )
 public class DashPayModule extends Plugin {
     private static Context ionicContext;
-    public DashPayModule(Context ctx)
+    /*public DashPayModule(Context ctx)
     {
         super(); // Remove this
         this.ionicContext = ctx;
 
-    }
+    }*/
 protected static final int PRINT_REQUEST_CODE = 2; // Unique request code
     @PluginMethod
     public void echo(PluginCall call) {
@@ -47,7 +47,7 @@ protected static final int PRINT_REQUEST_CODE = 2; // Unique request code
  
     @PluginMethod()
     public void print(PluginCall call) {
-
+try{
         String printString = call.getString("printString");
         String EXTRA_ORIGINATING_URI = call.getString("EXTRA_ORIGINATING_URI");
         // Filter based on the value if want
@@ -63,23 +63,28 @@ protected static final int PRINT_REQUEST_CODE = 2; // Unique request code
         share.putExtra("printString", printString);
         share.setPackage(info.activityInfo.packageName);
         found = true;
-        break;
+
       }
     }
-    if (!found){
+    if (found == false){
       //promise.resolve("com.dashpay.bridge");
         JSObject ret = new JSObject();
         ret.put("value", "printing failed, bridge app not detected");
         call.success(ret);
-      return;
     }
-    //mReturnResults = promise;
-        startActivityForResult(call,Intent.createChooser(share,"Select"),PRINT_REQUEST_CODE);
-       JSObject ret = new JSObject();
+    else {
+        //mReturnResults = promise;
+        startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
+        JSObject ret = new JSObject();
         ret.put("value", "sent to printer");
         call.success(ret);
-        //saveCall(call);
-        //pluginRequestPermission(Manifest.permission.READ_CONTACTS, PRINT_REQUEST_CODE);
+    }
+}
+catch(Exception ex){
+    JSObject ret = new JSObject();
+    ret.put("value", "printing failed "+ ex.getMessage());
+    call.success(ret);
+}
     }
     @Override
     protected void handleRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
