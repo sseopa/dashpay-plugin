@@ -7,5 +7,5 @@ declare module '@capacitor/core' {
 export interface DashPayModulePlugin {
   echo(options: { value: string }): Promise<{ value: string }>;
   getSerial(options: { value: string }): Promise<{ value: string }>;
-  print(printString: string,EXTRA_ORIGINATING_URI:string,dashpaypackagename:string): Promise<{results: any[]}>;
+  print(options:{printString: string,EXTRA_ORIGINATING_URI:string}): Promise<{results: any[]}>;
 }

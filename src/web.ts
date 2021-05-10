@@ -17,10 +17,10 @@ export class DashPayModuleWeb extends WebPlugin implements DashPayModulePlugin {
     console.log('getSerial', options);
     return options;
   }
-  async print(printString: string,EXTRA_ORIGINATING_URI:string,dashpaypackagename:string): Promise<{ results: any[] }> {
-    console.log('print string: ', printString);
-    console.log('EXTRA_ORIGINATING_URI: ', EXTRA_ORIGINATING_URI);
-    console.log('dashpaypackagename: ', dashpaypackagename);
+  async print(options:{printString: string,EXTRA_ORIGINATING_URI:string}): Promise<{ results: any[] }> {
+    console.log('print string: ', options.printString);
+    console.log('EXTRA_ORIGINATING_URI: ', options.EXTRA_ORIGINATING_URI);
+    
     return {
       results: [{
         firstName: 'Dummy',
