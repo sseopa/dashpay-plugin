@@ -68,7 +68,9 @@ try{
             share.putExtra("key", "Print");
             share.putExtra("printString", printString);
             share.setPackage(dashpayPackageName);
-            startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
+            //startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
+            this.getBridge().getActivity().startActivityForResult(Intent.createChooser(share,"Select"),PRINT_REQUEST_CODE);
+            //reactContext.getCurrentActivity().startActivityForResult(Intent.createChooser(share,"Select"),PRINT_REQUEST_CODE);
             JSObject ret = new JSObject();
             ret.put("value", "sent to printer");
             call.success(ret);
