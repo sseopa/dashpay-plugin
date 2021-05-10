@@ -29,11 +29,10 @@ var capacitorPlugin = (function (exports, core) {
                 return options;
             });
         }
-        print(printString, EXTRA_ORIGINATING_URI, dashpaypackagename) {
+        print(options) {
             return __awaiter(this, void 0, void 0, function* () {
-                console.log('print string: ', printString);
-                console.log('EXTRA_ORIGINATING_URI: ', EXTRA_ORIGINATING_URI);
-                console.log('dashpaypackagename: ', dashpaypackagename);
+                console.log('print string: ', options.printString);
+                console.log('EXTRA_ORIGINATING_URI: ', options.EXTRA_ORIGINATING_URI);
                 return {
                     results: [{
                             firstName: 'Dummy',

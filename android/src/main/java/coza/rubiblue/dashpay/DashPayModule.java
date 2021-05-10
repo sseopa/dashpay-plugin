@@ -57,22 +57,26 @@ try{
     Context context=this.getBridge().getActivity().getApplicationContext();
         String printString = call.getString("printString");
         String EXTRA_ORIGINATING_URI = call.getString("EXTRA_ORIGINATING_URI");
-        String dashpayPackageName = call.getString("dashpaypackagename");
+        Boolean NewActivityLaunchOption = call.getBoolean("NewActivityLaunchOption",false);
         Intent share = new Intent(Intent.ACTION_SEND);
     share.setType("text/plain");
     List<ResolveInfo> resInfo = context.getPackageManager().queryIntentActivities(share, 0);
     for (ResolveInfo info : resInfo) {
-        if (info.activityInfo.packageName.toLowerCase().contains(dashpayPackageName) ||
-                info.activityInfo.name.toLowerCase().contains(dashpayPackageName)) {
+        if (info.activityInfo.packageName.toLowerCase().contains("com.dashpay.bridge") ||
+                info.activityInfo.name.toLowerCase().contains("com.dashpay.bridge")) {
             share.putExtra(Intent.EXTRA_ORIGINATING_URI, EXTRA_ORIGINATING_URI);
             share.putExtra("key", "Print");
             share.putExtra("printString", printString);
-            share.setPackage(dashpayPackageName);
-            startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
-            //this.getBridge().getActivity().startActivityForResult(Intent.createChooser(share,"Select"),PRINT_REQUEST_CODE);
-            
+            share.setPackage("com.dashpay.bridge");
             JSObject ret = new JSObject();
-            ret.put("value", "sent to printer");
+            if(NewActivityLaunchOption == false) {
+                startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
+                ret.put("value", "printing");
+            }
+            else {
+                this.getBridge().getActivity().startActivityForResult(Intent.createChooser(share,"Select"),PRINT_REQUEST_CODE);
+                ret.put("value", "sent to printer");
+            }
             call.success(ret);
         }
     }

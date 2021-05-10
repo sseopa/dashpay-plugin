@@ -12,7 +12,11 @@ export declare class DashPayModuleWeb extends WebPlugin implements DashPayModule
     }): Promise<{
         value: string;
     }>;
-    print(printString: string, EXTRA_ORIGINATING_URI: string, dashpaypackagename: string): Promise<{
+    print(options: {
+        printString: string;
+        EXTRA_ORIGINATING_URI: string;
+        NewActivityLaunchOption: boolean;
+    }): Promise<{
         results: any[];
     }>;
 }
