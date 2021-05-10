@@ -27,8 +27,8 @@ import java.util.Map;
         requestCodes={DashPayModule.PRINT_REQUEST_CODE}
 )
 public class DashPayModule extends Plugin {
-   
 protected static final int PRINT_REQUEST_CODE = 2; // Unique request code
+
     @PluginMethod
     public void echo(PluginCall call) {
         String value = call.getString("value");
@@ -54,19 +54,26 @@ protected static final int PRINT_REQUEST_CODE = 2; // Unique request code
     @PluginMethod()
     public void print(PluginCall call) {
 try{
+    Context context=this.getBridge().getActivity().getApplicationContext();
         String printString = call.getString("printString");
         String EXTRA_ORIGINATING_URI = call.getString("EXTRA_ORIGINATING_URI");
         String dashpayPackageName = call.getString("dashpaypackagename");
         Intent share = new Intent(Intent.ACTION_SEND);
     share.setType("text/plain");
-    share.putExtra(Intent.EXTRA_ORIGINATING_URI, EXTRA_ORIGINATING_URI);
-        share.putExtra("key", "Print");
-        share.putExtra("printString", printString);
-        share.setPackage(dashpayPackageName);
-       startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
-        JSObject ret = new JSObject();
-        ret.put("value", "sent to printer");
-        call.success(ret);
+    List<ResolveInfo> resInfo = context.getPackageManager().queryIntentActivities(share, 0);
+    for (ResolveInfo info : resInfo) {
+        if (info.activityInfo.packageName.toLowerCase().contains(dashpayPackageName) ||
+                info.activityInfo.name.toLowerCase().contains(dashpayPackageName)) {
+            share.putExtra(Intent.EXTRA_ORIGINATING_URI, EXTRA_ORIGINATING_URI);
+            share.putExtra("key", "Print");
+            share.putExtra("printString", printString);
+            share.setPackage(dashpayPackageName);
+            startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
+            JSObject ret = new JSObject();
+            ret.put("value", "sent to printer");
+            call.success(ret);
+        }
+    }
 }
 catch(Exception ex){
     JSObject ret = new JSObject();
