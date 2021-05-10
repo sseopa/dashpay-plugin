@@ -67,7 +67,7 @@ try{
             share.putExtra(Intent.EXTRA_ORIGINATING_URI, EXTRA_ORIGINATING_URI);
             share.putExtra("key", "Print");
             share.putExtra("printString", printString);
-            share.setPackage("com.dashpay.bridge");
+            share.setPackage(info.activityInfo.packageName);
             JSObject ret = new JSObject();
             if(NewActivityLaunchOption == false) {
                 startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
