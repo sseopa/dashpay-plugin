@@ -42,10 +42,6 @@ protected static final int PRINT_REQUEST_CODE = 2; // Unique request code
         try{
         JSObject ret = new JSObject();
         String Serial = android.os.Build.SERIAL;
-        if(Serial == "unknown"){
-            Serial = android.os.Build.getSerial();
-        }
-        ret.put("value", android.os.Build.SERIAL);
         call.success(ret);
         }
         catch(Exception ex){
