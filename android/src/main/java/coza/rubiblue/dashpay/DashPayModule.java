@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.database.Cursor;
+import android.os.Build;
 import android.provider.ContactsContract;
 import android.util.Log;
  
@@ -41,12 +42,18 @@ protected static final int PRINT_REQUEST_CODE = 2; // Unique request code
     public void getSerial(PluginCall call) {
         try{
         JSObject ret = new JSObject();
-        ret.put("value", android.os.Build.SERIAL);
+        String SerialNumber = Build.SERIAL;
+        if(SerialNumber == "unknown"){
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                SerialNumber = Build.getSerial();
+            }
+        }
+        ret.put("value", SerialNumber);
         call.success(ret);
         }
         catch(Exception ex){
             JSObject ret = new JSObject();
-        ret.put("value", "failed to get serial "+ ex.getMessage());
+        ret.put("value", "unknown");
         call.success(ret);
         }
     }
