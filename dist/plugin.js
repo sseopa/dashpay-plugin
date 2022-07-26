@@ -42,6 +42,14 @@ var capacitorPlugin = (function (exports, core) {
                 };
             });
         }
+        pay(options) {
+            return __awaiter(this, void 0, void 0, function* () {
+                //console.logoptions('print string: ', options.printString);
+                //console.log('EXTRA_ORIGINATING_URI: ', options.EXTRA_ORIGINATING_URI);
+                //version: 1.0
+                return options;
+            });
+        }
     }
     const DashPayModule = new DashPayModuleWeb();
     core.registerWebPlugin(DashPayModule);

@@ -60,5 +60,6 @@
   },
   "bugs": {
     "url": "https://github.com/sseopa/dashpay-plugin.git/issues"
-  }
+  },
+  "dependencies": {}
 }
