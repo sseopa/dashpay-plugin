@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src"
   ],
-  "SelectedNode": "\\tsconfig.json",
+  "SelectedNode": "\\src\\web.ts",
   "PreviewInSolutionExplorer": false
 }

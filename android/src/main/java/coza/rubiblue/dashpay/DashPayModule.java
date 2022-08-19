@@ -28,12 +28,11 @@ import java.util.List;
 import java.util.Map;
 
 @NativePlugin(
-        requestCodes={DashPayModule.PRINT_REQUEST_CODE}
+        requestCodes={DashPayModule.REQUEST_CODE}
 )
 public class DashPayModule extends Plugin {
-    protected static final int PRINT_REQUEST_CODE = 2; // Unique request code
+    protected static final int REQUEST_CODE = 2; // Unique request code
     private static final String PAYMENT_URI = "com.ar.dashpaypos";
-    private static final int REQUEST_CODE = 1;
     public static int tsn=1;
     public static String lastSentTsn="";
     private PluginCall mReturnResults;
@@ -85,10 +84,10 @@ public class DashPayModule extends Plugin {
                     share.setPackage(info.activityInfo.packageName);
                     JSObject ret = new JSObject();
                     if (NewActivityLaunchOption == false) {
-                        startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
+                        startActivityForResult(call, Intent.createChooser(share, "Select"), REQUEST_CODE);
                         ret.put("value", "printing");
                     } else {
-                        this.getBridge().getActivity().startActivityForResult(Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
+                        this.getBridge().getActivity().startActivityForResult(Intent.createChooser(share, "Select"), REQUEST_CODE);
                         ret.put("value", "sent to printer");
                     }
                     call.success(ret);
@@ -133,6 +132,7 @@ public class DashPayModule extends Plugin {
                 return;
             }
 
+            saveCall(call);
             mReturnResults = call;
             startActivityForResult(call,Intent.createChooser(share, "Select"), REQUEST_CODE);
             //this.getBridge().getActivity().startActivityForResult(Intent.createChooser(share, "Select"), REQUEST_CODE);
@@ -160,7 +160,7 @@ public class DashPayModule extends Plugin {
             }
         }
 
-        if (requestCode == PRINT_REQUEST_CODE) {
+        if (requestCode == REQUEST_CODE) {
             // We got the permission!
             loadContacts(savedCall);
         }
@@ -168,34 +168,42 @@ public class DashPayModule extends Plugin {
 
     @Override
     protected void handleOnActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.handleOnActivityResult(requestCode,resultCode,intent);
+
         try {
+            mReturnResults = getSavedCall();
             if (requestCode == REQUEST_CODE) {
                 if (mReturnResults != null) {
                     JSObject ret = new JSObject();
 
-                    if (resultCode == Activity.RESULT_OK) {
+                   // if (resultCode == Activity.RESULT_OK) {
 
                         String tid = intent.getStringExtra("TRANSACTION_ID");
                         String result = intent.getStringExtra("RESULT");
 
-                        if (result.equals("APPROVED")) {
-                            //Toast.makeText(getActivity(),intent.getStringExtra("RESPONSE_CODE"),Toast.LENGTH_SHORT).show();
-                            String responseCode = intent.getStringExtra("RESPONSE_CODE");
-                            String authCode = intent.getStringExtra("AUTH_CODE");
+                        if (result != null) {
+                            if (result.equals("APPROVED")) {
+                                //Toast.makeText(getActivity(),intent.getStringExtra("RESPONSE_CODE"),Toast.LENGTH_SHORT).show();
+                                String responseCode = intent.getStringExtra("RESPONSE_CODE");
+                                String authCode = intent.getStringExtra("AUTH_CODE");
 
-                            ret.put("result", result);
+                                ret.put("result", result);
 
-                            ret.put("result", result);
-                            ret.put("displayTest", authCode);
-                            ret.put("responseCode", responseCode);
-                            ret.put("value", "APPROVED");
-                            mReturnResults.resolve(ret);
+                                ret.put("result", result);
+                                ret.put("displayTest", authCode);
+                                ret.put("responseCode", responseCode);
+                                ret.put("value", "APPROVED");
+                                mReturnResults.success(ret);
 
-                        } else if (result.equals("DECLINED")) {
-                            ret.put("value", "DECLINED");
-                            mReturnResults.success(ret);
-                        } else {
-                            ret.put("value", "FAILED");
+                            } else if (result.equals("DECLINED")) {
+                                ret.put("value", "DECLINED");
+                                mReturnResults.success(ret);
+                            } else {
+                                ret.put("value", "FAILED");
+                                mReturnResults.success(ret);
+                            }
+                        }else{
+                            ret.put("value", "RESULTS CODE IS: " + resultCode);
                             mReturnResults.success(ret);
                         }
 
@@ -207,27 +215,27 @@ public class DashPayModule extends Plugin {
                             public void onFinish() {
                             }
                         }.start();
-
-                    } else if (resultCode == Activity.RESULT_CANCELED) {
+                    /*} else if (resultCode == Activity.RESULT_CANCELED) {
                         ret.put("value", "Cancelled");
                         mReturnResults.success(ret);
-                    }
+                    }else{
+                        ret.put("value", "UNKNOWN RESULTS: " + resultCode);
+                        mReturnResults.success(ret);
+                    }*/
+                }else{
+                    JSObject ret = new JSObject();
+                    ret.put("value", "REQUEST_CODE not matching");
+                    mReturnResults.success(ret);
                 }
             }else {
                 JSObject ret = new JSObject();
                 ret.put("value", "REQUEST_CODE not matching");
                 mReturnResults.success(ret);
-                /*if(requestCode == PRINT_REQUEST_CODE){
-                    String printResult = intent.getStringExtra("RESULT");
-                    if(printResult.toLowerCase() == "true") {
-                        mReturnResults.resolve(printResult);
-                    }else {
-                        mReturnResults.reject(printResult);
-                    }
-                }*/
             }
         }catch (Exception e){
-            mReturnResults.reject("bad",e);
+            JSObject ret = new JSObject();
+            ret.put("value", e.getMessage());
+            mReturnResults.success(ret);
         }
     }
 
