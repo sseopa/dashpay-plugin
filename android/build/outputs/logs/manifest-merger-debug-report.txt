@@ -3,21 +3,9 @@ manifest
 ADDED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:2:3-6:14
 INJECTED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:2:3-6:14
 INJECTED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:2:3-6:14
-INJECTED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:2:3-6:14
-INJECTED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:2:3-6:14
-INJECTED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:2:3-6:14
-INJECTED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:2:3-6:14
 	package
 		ADDED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:3:7-52
 		INJECTED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml
-	android:versionName
-		INJECTED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml
-		ADDED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:2:3-6:14
-		INJECTED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml
-	android:versionCode
-		INJECTED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml
-		ADDED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:2:3-6:14
 		INJECTED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:2:13-71

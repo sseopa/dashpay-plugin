@@ -9,6 +9,11 @@ export interface DashPayModulePlugin {
     }): Promise<{
         value: string;
     }>;
+    openOnlineForm(options: {
+        strUri: string;
+    }): Promise<{
+        strUri: string;
+    }>;
     getSerial(options: {
         value: string;
     }): Promise<{

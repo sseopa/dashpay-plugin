@@ -7,6 +7,11 @@ export declare class DashPayModuleWeb extends WebPlugin implements DashPayModule
     }): Promise<{
         value: string;
     }>;
+    openOnlineForm(options: {
+        strUri: string;
+    }): Promise<{
+        strUri: string;
+    }>;
     getSerial(options: {
         value: string;
     }): Promise<{

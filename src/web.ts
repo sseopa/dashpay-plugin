@@ -14,7 +14,7 @@ export class DashPayModuleWeb extends WebPlugin implements DashPayModulePlugin {
         return options;
     }
 
-    async openOnlineForm(options: { value: string }): Promise<{ value: string }> {
+    async openOnlineForm(options: { strUri: string }): Promise<{ strUri: string }> {
         console.log('openOnlineForm', options);
         return options;
     }

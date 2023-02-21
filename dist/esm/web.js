@@ -21,6 +21,12 @@ export class DashPayModuleWeb extends WebPlugin {
             return options;
         });
     }
+    openOnlineForm(options) {
+        return __awaiter(this, void 0, void 0, function* () {
+            console.log('openOnlineForm', options);
+            return options;
+        });
+    }
     getSerial(options) {
         return __awaiter(this, void 0, void 0, function* () {
             console.log('getSerial', options);
