@@ -1,0 +1,5 @@
+coza/rubiblue/dashpay/DashPayModule.java
+ coza.rubiblue.dashpay.DashPayModule
+ coza.rubiblue.dashpay.DashPayModule$1
+coza/rubiblue/dashpay/dashpayplugin/BuildConfig.java
+ coza.rubiblue.dashpay.dashpayplugin.BuildConfig
