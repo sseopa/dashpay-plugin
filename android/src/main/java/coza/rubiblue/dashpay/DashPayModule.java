@@ -32,7 +32,7 @@ public class DashPayModule extends Plugin {
     protected static final int REQUEST_CODE = 1; // Unique request code
     protected static final int PRINT_REQUEST_CODE = 2;
     protected static final int ONLINE_FORM_REQUEST_CODE = 3;
-    private static final String PAYMENT_URI = "com.ar.dashpaypos";
+    private static final String PAYMENT_URI = "com.ar.nedbankpos";
     public static String lastSentTsn="";
     private PluginCall mReturnResults;
 
@@ -81,6 +81,7 @@ public class DashPayModule extends Plugin {
 
     @PluginMethod()
     public void print(PluginCall call) {
+        boolean found= false;
         try {
             //Context context = this.getBridge().getActivity().getApplicationContext();
             String printString = call.getString("printString");
@@ -99,15 +100,17 @@ public class DashPayModule extends Plugin {
                     share.putExtra("key", "Print");
                     share.putExtra("printString", printString);
                     share.setPackage(info.activityInfo.packageName);
+
                     JSObject ret = new JSObject();
                     if (!NewActivityLaunchOption) {
                         startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
-                        ret.put("value", "printing");
+                        //ret.put("value", "printing");
                     } else {
                         startActivityForResult(call, Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
-                        //this.getBridge().getActivity().startActivityForResult(Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
-                        ret.put("value", "sent to printer");
+                      //  this.getBridge().getActivity().startActivityForResult(Intent.createChooser(share, "Select"), PRINT_REQUEST_CODE);
+                       // ret.put("value", "sent to printer");
                     }
+
                     mReturnResults.success(ret);
                 }
             }
@@ -117,6 +120,51 @@ public class DashPayModule extends Plugin {
             mReturnResults.success(ret);
         }
     }
+@PluginMethod()
+    public void initiateDebicheck(PluginCall call) {
+        try {
+            Intent share = new Intent(android.content.Intent.ACTION_SEND);
+            boolean found = false;
+            share.setType("text/plain");
+            List<ResolveInfo> resInfo = this.getContext().getPackageManager().queryIntentActivities(share, 0);
+            for (ResolveInfo info : resInfo) {
+                if (info.activityInfo.packageName.toLowerCase().contains(PAYMENT_URI) ||
+                        info.activityInfo.name.toLowerCase().contains(PAYMENT_URI)) {
+                    share.putExtra(Intent.EXTRA_ORIGINATING_URI, call.getString("EXTRA_ORIGINATING_URI"));
+                    share.putExtra("TRANSACTION_TYPE", call.getString("TRANSACTION_TYPE"));
+                    share.putExtra("ACCOUNT_NUMBER", call.getString("ACCOUNT_NUMBER")); 
+                    share.putExtra("MAX_AUTH_COLLECTION", call.getString("MAX_AUTH_COLLECTION"));
+                    share.putExtra("CONTACT_REFERENCE", call.getString("CONTACT_REFERENCE"));
+                    share.putExtra("DEBITOR_ID", call.getString("DEBITOR_ID"));
+                    share.putExtra("FROM_ACC_TYPE", call.getString("FROM_ACC_TYPE"));
+                    share.putExtra("TO_ACC_TYPE", call.getString("TO_ACC_TYPE"));
+                    share.putExtra("COMMS_TYPE", call.getString("COMMS_TYPE"));
+                    share.putExtra("DISABLE_CASHIER_LOGIN", call.getString("DISABLE_CASHIER_LOGIN"));
+                    share.putExtra("DISABLE_SLIP_PRINTING", call.getString("DISABLE_SLIP_PRINTING"));
+                    share.setPackage(info.activityInfo.packageName);
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                JSObject ret = new JSObject();
+                ret.put("value", "no dashpay pos");
+                call.success(ret);
+                return;
+            }
+
+            //saveCall(call);
+            mReturnResults = call;
+            startActivityForResult(call,Intent.createChooser(share, "Select"), REQUEST_CODE);
+            //this.getBridge().getActivity().startActivityForResult(Intent.createChooser(share, "Select"), REQUEST_CODE);
+        } catch (Exception ex) {
+            JSObject ret = new JSObject();
+            ret.put("value", "dashpay pos init failed " + ex.getMessage());
+            call.success(ret);
+        }
+    }
+   
 
     @PluginMethod()
     public void pay(PluginCall call) {
@@ -239,7 +287,21 @@ public class DashPayModule extends Plugin {
                     ret.put("value", "REQUEST_CODE not matching");
                     mReturnResults.success(ret);
                 }
-            }else {
+            }
+            else if(requestCode == PRINT_REQUEST_CODE)
+            {
+
+                String printResult = intent.getStringExtra("RESULT");
+                if(printResult.toLowerCase() == "true") {
+                    ret.put("value", "printing");
+                    mReturnResults.success(ret);
+                }else {
+                    ret.put("value", printResult);
+                    mReturnResults.success(ret);
+                }
+
+            }
+            else {
                 ret.put("value", "REQUEST_CODE not matching");
                 mReturnResults.success(ret);
             }

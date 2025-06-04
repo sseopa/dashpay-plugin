@@ -46,6 +46,11 @@ export class DashPayModuleWeb extends WebPlugin {
             };
         });
     }
+    initiateDebicheck(options) {
+        return __awaiter(this, void 0, void 0, function* () {          
+            return options;
+        });
+    }
     pay(options) {
         return __awaiter(this, void 0, void 0, function* () {
             //console.logoptions('print string: ', options.printString);

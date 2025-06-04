@@ -56,6 +56,11 @@ var capacitorPlugin = (function (exports, core) {
                 return options;
             });
         }
+        initiateDebicheck(options) {
+            return __awaiter(this, void 0, void 0, function* () {               
+                return options;
+            });
+        }
     }
     const DashPayModule = new DashPayModuleWeb();
     core.registerWebPlugin(DashPayModule);

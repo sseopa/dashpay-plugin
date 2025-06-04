@@ -1,0 +1,17 @@
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-pngs-0 C:\Code\Mobile\P\Plugns\dashpay-plugin\android\build\generated\res\pngs\release
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-resValues-1 C:\Code\Mobile\P\Plugns\dashpay-plugin\android\build\generated\res\resValues\release
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-rs-2 C:\Code\Mobile\P\Plugns\dashpay-plugin\android\build\generated\res\rs\release
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-mergeReleaseResources-3 C:\Code\Mobile\P\Plugns\dashpay-plugin\android\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-mergeReleaseResources-4 C:\Code\Mobile\P\Plugns\dashpay-plugin\android\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-merged_res-5 C:\Code\Mobile\P\Plugns\dashpay-plugin\android\build\intermediates\merged_res\release
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-main-6 C:\Code\Mobile\P\Plugns\dashpay-plugin\android\src\main\res
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-release-7 C:\Code\Mobile\P\Plugns\dashpay-plugin\android\src\release\res
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-packaged_res-8 C:\Code\Mobile\easipolmobileapp\node_modules\@capacitor\android\capacitor\build\intermediates\packaged_res\release
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-fragment-1.3.0-9 C:\Users\sseopa\.gradle\caches\transforms-3\1f4dce753ca34a05371df7c86c27078c\transformed\fragment-1.3.0\res
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-jetified-savedstate-1.1.0-10 C:\Users\sseopa\.gradle\caches\transforms-3\1f8fdf649adf4cea8f3d5860b59a4f27\transformed\jetified-savedstate-1.1.0\res
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-lifecycle-runtime-2.3.0-11 C:\Users\sseopa\.gradle\caches\transforms-3\5412cb8fe4229cec813fa280ff20c038\transformed\lifecycle-runtime-2.3.0\res
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-appcompat-1.2.0-12 C:\Users\sseopa\.gradle\caches\transforms-3\7d3e3ddc229883453bf548a769d21a6d\transformed\appcompat-1.2.0\res
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-lifecycle-viewmodel-2.3.0-13 C:\Users\sseopa\.gradle\caches\transforms-3\866468ecc72384ad25c34481c7a93416\transformed\lifecycle-viewmodel-2.3.0\res
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-jetified-appcompat-resources-1.2.0-14 C:\Users\sseopa\.gradle\caches\transforms-3\9ce19365f246c95869dbf72fe51121b8\transformed\jetified-appcompat-resources-1.2.0\res
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-core-1.3.2-15 C:\Users\sseopa\.gradle\caches\transforms-3\aee50ce55f545413ee77c1991b7963d9\transformed\core-1.3.2\res
+coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-coordinatorlayout-1.1.0-16 C:\Users\sseopa\.gradle\caches\transforms-3\c814d40d025241617542be96004b9c47\transformed\coordinatorlayout-1.1.0\res

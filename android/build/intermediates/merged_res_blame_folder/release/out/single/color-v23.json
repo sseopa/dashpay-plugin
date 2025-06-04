@@ -1,38 +1,38 @@
 [
     {
-        "merged": "C:\\Users\\kledwaba\\Documents\\RubiBlue\\Projects\\Dashpay Plugin\\dashpay-plugin\\android\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_btn_checkable.xml",
-        "source": "C:\\Users\\kledwaba\\.gradle\\caches\\transforms-3\\ce3f79a523d89320dd464c2b2de6183e\\transformed\\appcompat-1.2.0\\res\\color-v23\\abc_tint_btn_checkable.xml"
+        "merged": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-merged_res-4:/color-v23/abc_tint_switch_track.xml",
+        "source": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-appcompat-1.2.0-11:/color-v23/abc_tint_switch_track.xml"
     },
     {
-        "merged": "C:\\Users\\kledwaba\\Documents\\RubiBlue\\Projects\\Dashpay Plugin\\dashpay-plugin\\android\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_btn_colored_text_material.xml",
-        "source": "C:\\Users\\kledwaba\\.gradle\\caches\\transforms-3\\ce3f79a523d89320dd464c2b2de6183e\\transformed\\appcompat-1.2.0\\res\\color-v23\\abc_btn_colored_text_material.xml"
+        "merged": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-merged_res-4:/color-v23/abc_color_highlight_material.xml",
+        "source": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-appcompat-1.2.0-11:/color-v23/abc_color_highlight_material.xml"
     },
     {
-        "merged": "C:\\Users\\kledwaba\\Documents\\RubiBlue\\Projects\\Dashpay Plugin\\dashpay-plugin\\android\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_color_highlight_material.xml",
-        "source": "C:\\Users\\kledwaba\\.gradle\\caches\\transforms-3\\ce3f79a523d89320dd464c2b2de6183e\\transformed\\appcompat-1.2.0\\res\\color-v23\\abc_color_highlight_material.xml"
+        "merged": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-merged_res-4:/color-v23/abc_btn_colored_text_material.xml",
+        "source": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-appcompat-1.2.0-11:/color-v23/abc_btn_colored_text_material.xml"
     },
     {
-        "merged": "C:\\Users\\kledwaba\\Documents\\RubiBlue\\Projects\\Dashpay Plugin\\dashpay-plugin\\android\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_edittext.xml",
-        "source": "C:\\Users\\kledwaba\\.gradle\\caches\\transforms-3\\ce3f79a523d89320dd464c2b2de6183e\\transformed\\appcompat-1.2.0\\res\\color-v23\\abc_tint_edittext.xml"
+        "merged": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-merged_res-4:/color-v23/abc_tint_seek_thumb.xml",
+        "source": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-appcompat-1.2.0-11:/color-v23/abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "C:\\Users\\kledwaba\\Documents\\RubiBlue\\Projects\\Dashpay Plugin\\dashpay-plugin\\android\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_btn_colored_borderless_text_material.xml",
-        "source": "C:\\Users\\kledwaba\\.gradle\\caches\\transforms-3\\ce3f79a523d89320dd464c2b2de6183e\\transformed\\appcompat-1.2.0\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
+        "merged": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-merged_res-4:/color-v23/abc_tint_default.xml",
+        "source": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-appcompat-1.2.0-11:/color-v23/abc_tint_default.xml"
     },
     {
-        "merged": "C:\\Users\\kledwaba\\Documents\\RubiBlue\\Projects\\Dashpay Plugin\\dashpay-plugin\\android\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_default.xml",
-        "source": "C:\\Users\\kledwaba\\.gradle\\caches\\transforms-3\\ce3f79a523d89320dd464c2b2de6183e\\transformed\\appcompat-1.2.0\\res\\color-v23\\abc_tint_default.xml"
+        "merged": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-merged_res-4:/color-v23/abc_btn_colored_borderless_text_material.xml",
+        "source": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-appcompat-1.2.0-11:/color-v23/abc_btn_colored_borderless_text_material.xml"
     },
     {
-        "merged": "C:\\Users\\kledwaba\\Documents\\RubiBlue\\Projects\\Dashpay Plugin\\dashpay-plugin\\android\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_seek_thumb.xml",
-        "source": "C:\\Users\\kledwaba\\.gradle\\caches\\transforms-3\\ce3f79a523d89320dd464c2b2de6183e\\transformed\\appcompat-1.2.0\\res\\color-v23\\abc_tint_seek_thumb.xml"
+        "merged": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-merged_res-4:/color-v23/abc_tint_spinner.xml",
+        "source": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-appcompat-1.2.0-11:/color-v23/abc_tint_spinner.xml"
     },
     {
-        "merged": "C:\\Users\\kledwaba\\Documents\\RubiBlue\\Projects\\Dashpay Plugin\\dashpay-plugin\\android\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_spinner.xml",
-        "source": "C:\\Users\\kledwaba\\.gradle\\caches\\transforms-3\\ce3f79a523d89320dd464c2b2de6183e\\transformed\\appcompat-1.2.0\\res\\color-v23\\abc_tint_spinner.xml"
+        "merged": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-merged_res-4:/color-v23/abc_tint_btn_checkable.xml",
+        "source": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-appcompat-1.2.0-11:/color-v23/abc_tint_btn_checkable.xml"
     },
     {
-        "merged": "C:\\Users\\kledwaba\\Documents\\RubiBlue\\Projects\\Dashpay Plugin\\dashpay-plugin\\android\\build\\intermediates\\res\\merged\\release\\color-v23\\abc_tint_switch_track.xml",
-        "source": "C:\\Users\\kledwaba\\.gradle\\caches\\transforms-3\\ce3f79a523d89320dd464c2b2de6183e\\transformed\\appcompat-1.2.0\\res\\color-v23\\abc_tint_switch_track.xml"
+        "merged": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-merged_res-4:/color-v23/abc_tint_edittext.xml",
+        "source": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-appcompat-1.2.0-11:/color-v23/abc_tint_edittext.xml"
     }
 ]

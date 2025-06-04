@@ -3,13 +3,13 @@
 3    package="coza.rubiblue.dashpay.dashpayplugin" >
 4
 5    <uses-sdk
-6        android:minSdkVersion="21"
-6-->C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml
+6        android:minSdkVersion="1"
+6-->C:\Code\Mobile\P\Plugns\dashpay-plugin\android\src\main\AndroidManifest.xml
 7        android:targetSdkVersion="30" />
-7-->C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml
+7-->C:\Code\Mobile\P\Plugns\dashpay-plugin\android\src\main\AndroidManifest.xml
 8
 9    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
-9-->C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:5:5-86
-9-->C:\Users\kledwaba\Documents\RubiBlue\Projects\Dashpay Plugin\dashpay-plugin\android\src\main\AndroidManifest.xml:5:22-83
+9-->C:\Code\Mobile\P\Plugns\dashpay-plugin\android\src\main\AndroidManifest.xml:5:5-86
+9-->C:\Code\Mobile\P\Plugns\dashpay-plugin\android\src\main\AndroidManifest.xml:5:22-83
 10
 11</manifest>

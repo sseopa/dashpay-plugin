@@ -1,6 +1,6 @@
 [
     {
-        "merged": "C:\\Users\\kledwaba\\Documents\\RubiBlue\\Projects\\Dashpay Plugin\\dashpay-plugin\\android\\build\\intermediates\\res\\merged\\release\\anim-v21\\fragment_fast_out_extra_slow_in.xml",
-        "source": "C:\\Users\\kledwaba\\.gradle\\caches\\transforms-3\\3326700239a903574cd434f116984ce4\\transformed\\fragment-1.3.0\\res\\anim-v21\\fragment_fast_out_extra_slow_in.xml"
+        "merged": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-merged_res-4:/anim-v21/fragment_fast_out_extra_slow_in.xml",
+        "source": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-fragment-1.3.0-8:/anim-v21/fragment_fast_out_extra_slow_in.xml"
     }
 ]

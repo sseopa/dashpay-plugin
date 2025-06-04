@@ -1,6 +1,6 @@
 [
     {
-        "merged": "C:\\Users\\kledwaba\\Documents\\RubiBlue\\Projects\\Dashpay Plugin\\dashpay-plugin\\android\\build\\intermediates\\res\\merged\\release\\layout-v26\\abc_screen_toolbar.xml",
-        "source": "C:\\Users\\kledwaba\\.gradle\\caches\\transforms-3\\ce3f79a523d89320dd464c2b2de6183e\\transformed\\appcompat-1.2.0\\res\\layout-v26\\abc_screen_toolbar.xml"
+        "merged": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-merged_res-4:/layout-v26/abc_screen_toolbar.xml",
+        "source": "coza.rubiblue.dashpay.dashpayplugin.dashpay-plugin-appcompat-1.2.0-11:/layout-v26/abc_screen_toolbar.xml"
     }
 ]
