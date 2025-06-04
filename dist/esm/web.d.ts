@@ -19,7 +19,7 @@ export declare class DashPayModuleWeb extends WebPlugin implements DashPayModule
     }>;
     print(options: {
         printString: string;
-       // receiptLogo:string;
+        receiptLogo: string;
         EXTRA_ORIGINATING_URI: string;
         NewActivityLaunchOption: boolean;
     }): Promise<{

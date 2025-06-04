@@ -57,7 +57,10 @@ var capacitorPlugin = (function (exports, core) {
             });
         }
         initiateDebicheck(options) {
-            return __awaiter(this, void 0, void 0, function* () {               
+            return __awaiter(this, void 0, void 0, function* () {
+                //console.logoptions('print string: ', options.printString);
+                //console.log('EXTRA_ORIGINATING_URI: ', options.EXTRA_ORIGINATING_URI);
+                //version: 1.6
                 return options;
             });
         }
@@ -72,5 +75,5 @@ var capacitorPlugin = (function (exports, core) {
 
     return exports;
 
-}({}, capacitorExports));
+})({}, capacitorExports);
 //# sourceMappingURL=plugin.js.map

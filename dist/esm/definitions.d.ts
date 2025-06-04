@@ -1,5 +1,5 @@
 declare module '@capacitor/core' {
-    interface PluginRegistry {
+    interface CapacitorPlugins {
         DashPayModule: DashPayModulePlugin;
     }
 }
@@ -21,7 +21,7 @@ export interface DashPayModulePlugin {
     }>;
     print(options: {
         printString: string;
-        receiptLogo:string;
+        receiptLogo: string;
         EXTRA_ORIGINATING_URI: string;
         NewActivityLaunchOption: boolean;
     }): Promise<{

@@ -1,5 +1,5 @@
 declare module '@capacitor/core' {
-  interface PluginRegistry {
+  interface CapacitorPlugins {
     DashPayModule: DashPayModulePlugin;
   }
 }
